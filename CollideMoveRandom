@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CollideMoveRandom : MonoBehaviour {
+
+	float x;
+	float y;
+	float z;
+	Vector3 pos;
+
+	void OnTriggerEnter (Collider other) 
+	{
+
+		//print("hit");
+		if (other.tag == "Player") {
+			
+		x = Random.Range(-145, 145);
+		y = 100;
+		z = Random.Range(-186, 145);
+		pos = new Vector3(x, y, z);
+		transform.position = pos;
+	}
+}
+}
